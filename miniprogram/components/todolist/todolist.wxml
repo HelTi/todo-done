@@ -1,0 +1,4 @@
+<!--components/todolist/todolist.wxml-->
+<view>
+    todolist
+</view>

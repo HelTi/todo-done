@@ -1,0 +1,13 @@
+.page-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+}
+
+.top-left .day-text {
+    font-size: 20px;
+}
+
+.top-left .day-date {
+    font-size: 14px;
+}
