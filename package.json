@@ -1,0 +1,19 @@
+{
+  "name": "tododone",
+  "version": "1.0.0",
+  "description": "小程序版todolist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelTi/todo-done.git"
+  },
+  "author": "helti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HelTi/todo-done/issues"
+  },
+  "homepage": "https://github.com/HelTi/todo-done#readme"
+}

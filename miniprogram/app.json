@@ -15,7 +15,11 @@
         "pages/im/room/room"
     ],
     "usingComponents": {
-        "todo-list": "/components/todolist/todolist"
+        "todo-list": "/components/todolist/todolist",
+        "van-button": "@vant/weapp/button",
+        "van-icon": "@vant/weapp/icon",
+        "van-popup": "@vant/weapp/popup",
+        "van-checkbox": "@vant/weapp/checkbox"
     },
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -24,6 +28,5 @@
         "navigationBarTitleText": "TodoDone",
         "navigationBarTextStyle": "black"
     },
-    "sitemapLocation": "sitemap.json",
-    "style": "v2"
+    "sitemapLocation": "sitemap.json"
 }

@@ -18,6 +18,9 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        checkboxChange(event) {
+            console.log(event)
+            let checked = event.detail
+        }
     }
 })

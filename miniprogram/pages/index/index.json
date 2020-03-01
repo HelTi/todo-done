@@ -3,6 +3,6 @@
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "我的任务",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
 }

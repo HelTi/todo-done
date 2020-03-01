@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="page">
- <view class="page-top van-hairline--bottom">
+ <view class="page-top">
     <view class="top-left">
         <view class="day-text">我的一天</view>
         <view class="day-date">
@@ -8,7 +8,9 @@
         </view>
     </view>
     <view class="top-right">
-        <view>+</view>
+        <view>
+            <van-icon name="wap-nav" />
+        </view>
     </view>
  </view>
  <view class="page-content">

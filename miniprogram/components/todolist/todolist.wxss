@@ -1,1 +1,4 @@
 /* components/todolist/todolist.wxss */
+.todo-lsit-wrapper{
+    padding:0 20rpx;
+}
