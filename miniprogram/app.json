@@ -19,7 +19,9 @@
         "van-button": "@vant/weapp/button",
         "van-icon": "@vant/weapp/icon",
         "van-popup": "@vant/weapp/popup",
-        "van-checkbox": "@vant/weapp/checkbox"
+        "van-checkbox": "@vant/weapp/checkbox",
+        "van-cell": "@vant/weapp/cell",
+        "van-cell-group": "@vant/weapp/cell-group"
     },
     "window": {
         "backgroundColor": "#F6F6F6",

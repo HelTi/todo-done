@@ -28,6 +28,12 @@ Component({
                 checked: event.detail
             });
             
+        },
+        onClickTodoItem(){
+            this.triggerEvent('clicktodoitem')
+        },
+        onClickTodoItemRight(){
+            this.triggerEvent('clicktodoright')
         }
     }
 })

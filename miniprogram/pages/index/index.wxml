@@ -1,19 +1,24 @@
 <!--index.wxml-->
 <view class="page">
- <view class="page-top">
-    <view class="top-left">
-        <view class="day-text">我的一天</view>
-        <view class="day-date">
-            <text>2月29日</text> <text>星期六</text>
+    <view class="page-top">
+        <view class="top-left">
+            <view class="day-text">我的一天</view>
+            <view class="day-date">
+                <text>2月29日</text>
+                <text>星期六</text>
+            </view>
+        </view>
+        <view class="top-right">
+            <view bindtap="openMenuPopup">
+                <van-icon name="wap-nav" />
+            </view>
         </view>
     </view>
-    <view class="top-right">
-        <view>
-            <van-icon name="wap-nav" />
-        </view>
+    <view class="page-content">
+        <todo-list></todo-list>
     </view>
- </view>
- <view class="page-content">
-    <todo-list></todo-list>
- </view>
+    <!-- 右侧菜单 -->
+    <van-popup show="{{ showMenuPopup }}" position="right" custom-style="height: 100%;" bind:close="closeMenuPopup">
+        <side-menu/>
+    </van-popup>
 </view>

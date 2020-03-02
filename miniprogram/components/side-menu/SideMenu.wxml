@@ -1,0 +1,15 @@
+<!--components/side-menu/SideMenu.wxml-->
+<view class="side-menu-wrapper">
+    <view class="user-info">
+        <view class="user-avatar">
+            <van-icon name="user-circle-o" />
+        </view>
+        <view class="user-name">Helti</view>
+    </view>
+    <view class="menu-list">
+        <van-cell-group>
+            <van-cell size="large" icon="star-o" value="2" title="重要" />
+            <van-cell size="large" icon="records" value="3" title="任务列表" border="{{ false }}" />
+        </van-cell-group>
+    </view>
+</view>

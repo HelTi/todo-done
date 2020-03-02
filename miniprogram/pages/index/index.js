@@ -7,7 +7,8 @@ Page({
         userInfo: {},
         logged: false,
         takeSession: false,
-        requestResult: ''
+        requestResult: '',
+        showMenuPopup: false
     },
 
     onLoad: function() {
@@ -35,7 +36,16 @@ Page({
         //     }
         // })
     },
-
+    openMenuPopup() {
+        this.setData({
+            showMenuPopup: true
+        })
+    },
+    closeMenuPopup() {
+        this.setData({
+            showMenuPopup: false
+        })
+    },
     onGetUserInfo: function(e) {
         console.log(e)
         if (!this.data.logged && e.detail.userInfo) {

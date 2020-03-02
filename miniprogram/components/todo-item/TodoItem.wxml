@@ -4,10 +4,10 @@
         <view class="todo-check">
         <van-checkbox bind:change="onChange" value="{{ checked }}"></van-checkbox>
         </view>
-        <view class="todo-body">
+        <view class="todo-body" bindtap="onClickTodoItem">
             <view class="todo-title van-ellipsis">代办标题</view>
             <view class="todo-des van-ellipsis">日期：2010-9-8</view>
         </view>
-        <view class="todo-operate"><van-icon name="star-o" /></view>
+        <view class="todo-operate" bindtap="onClickTodoItemRight"><van-icon name="star-o" /></view>
     </view>
 </view>

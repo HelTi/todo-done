@@ -1,0 +1,25 @@
+/* components/side-menu/SideMenu.wxss */
+.side-menu-wrapper{
+    width: 450rpx;
+    height: 100%;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+}
+.user-info .user-avatar{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: rgb(77, 173, 252);
+}
+
+.user-info .user-name{
+    padding-left: 10rpx;
+}
+
+.menu-list{
+    
+}

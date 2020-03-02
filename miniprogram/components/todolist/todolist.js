@@ -21,6 +21,12 @@ Component({
         checkboxChange(event) {
             console.log(event)
             let checked = event.detail
+        },
+        clickTodoItemHandle(event){
+            console.log(event)
+        },
+        clickTodoItemRight(event){
+            console.log(event)
         }
     }
 })
