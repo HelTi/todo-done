@@ -19,6 +19,6 @@
     </view>
     <!-- 右侧菜单 -->
     <van-popup show="{{ showMenuPopup }}" position="right" custom-style="height: 100%;" bind:close="closeMenuPopup">
-        <side-menu/>
+        <side-menu bind:getuserinfo="onGetUserInfo" user-info="{{userInfo}}"/>
     </van-popup>
 </view>

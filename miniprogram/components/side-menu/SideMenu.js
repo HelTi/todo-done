@@ -4,7 +4,10 @@ Component({
      * 组件的属性列表
      */
     properties: {
-
+        userInfo: {
+            type: Object,
+            value: null
+        }
     },
 
     /**
@@ -18,6 +21,14 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        getUserInfo(e) {
+            console.log('e', e)
+            if (e.detail.userInfo) {
+                this.triggerEvent('getuserinfo', e.detail)
+            } else {
+                this.triggerEvent('getuserinfo', null)
+            }
 
+        }
     }
 })

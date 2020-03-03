@@ -10,10 +10,27 @@
     padding: 20rpx;
 }
 .user-info .user-avatar{
-    font-size: 30px;
+    font-size: 50px;
     display: flex;
     align-items: center;
-    color: rgb(77, 173, 252);
+    color: #A9C3F8;
+}
+.user-name{
+    margin-left: 10px;
+}
+/* 登录按钮 */
+
+.auth-btn {
+    border-color: none;
+    color: #333;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.auth-btn::after{
+    border: none !important;
 }
 
 .user-info .user-name{
@@ -23,3 +40,4 @@
 .menu-list{
     
 }
+

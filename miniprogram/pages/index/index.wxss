@@ -1,8 +1,12 @@
+page{
+    background: #A9C3F8;
+}
 .page-top{
     display: flex;
     justify-content: space-between;
     padding: 20rpx;
-    background: #dedede;
+    background: #A9C3F8;
+    color: #ffffff;
 }
 
 .top-left .day-text {

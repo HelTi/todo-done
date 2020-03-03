@@ -1,20 +1,44 @@
 /* components/todo-item/TodoItem.wxss */
-.van-ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.van-multi-ellipsis--l2{-webkit-line-clamp:2}.van-multi-ellipsis--l2,.van-multi-ellipsis--l3{display:-webkit-box;overflow:hidden;text-overflow:ellipsis;-webkit-box-orient:vertical}.van-multi-ellipsis--l3{-webkit-line-clamp:3}
 
-.todo-item-content{
+.van-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.van-multi-ellipsis--l2 {
+    -webkit-line-clamp: 2;
+}
+
+.van-multi-ellipsis--l2, .van-multi-ellipsis--l3 {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+}
+
+.van-multi-ellipsis--l3 {
+    -webkit-line-clamp: 3;
+}
+
+.todo-item-content {
+    background-color: #fff;
+    border-radius: 15rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20rpx;
-    border-bottom: 1px solid #dedede;
+    padding:0 20rpx;
+    height: 122rpx;
+    /* border-bottom: 1px solid #dedede; */
+    margin-bottom: 1px;
 }
 
-.todo-body{
+.todo-body {
     width: 580rpx;
     padding-left: 20rpx;
     font-size: 34rpx;
 }
 
-.todo-body .todo-des{
+.todo-body .todo-des {
     font-size: 24rpx;
 }
