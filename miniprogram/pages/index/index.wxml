@@ -17,8 +17,13 @@
     <view class="page-content">
         <todo-list></todo-list>
     </view>
+    <!-- todo input -->
+    <view class="todo-input-wrapper fixed-bottom">
+        <todo-input></todo-input>
+    </view>
+
     <!-- 右侧菜单 -->
     <van-popup show="{{ showMenuPopup }}" position="right" custom-style="height: 100%;" bind:close="closeMenuPopup">
-        <side-menu bind:getuserinfo="onGetUserInfo" user-info="{{userInfo}}"/>
+        <side-menu bind:getuserinfo="onGetUserInfo" user-info="{{userInfo}}" />
     </van-popup>
 </view>

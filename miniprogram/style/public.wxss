@@ -47,3 +47,10 @@
 .van-hairline--surround::after {
     border-width: 1px;
 }
+
+.fixed-bottom{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

@@ -1,1 +1,32 @@
 /* components/todo-input/TodoInput.wxss */
+
+.todo-input-wrapper {
+    display: flex;
+    align-items: center;
+    height: 90rpx;
+    width: 100%;
+    justify-content: space-between;
+    background-color: rgba(100, 96, 96,.2);
+    color: #fff;
+    border-radius: 10rpx;
+    font-size: 18px;
+}
+
+.add-icon, .enter-icon {
+    width: 80rpx;
+    display: flex;
+    height: 90rpx;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-component-wrapper {
+    width: 540rpx;
+    padding-left: 20rpx;
+}
+
+.input-component {
+    width: 100%;
+    color: #fff;
+    height: 90rpx;
+}

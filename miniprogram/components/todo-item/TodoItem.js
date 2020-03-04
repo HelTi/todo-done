@@ -6,7 +6,7 @@ Component({
     properties: {
         checked: {
             type: Boolean,
-            value: true
+            value: false
         }
     },
 

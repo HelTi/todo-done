@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-        "side-menu": "../../components/side-menu/SideMenu"
+        "side-menu": "../../components/side-menu/SideMenu",
+        "todo-input": "../../components/todo-input/TodoInput"
     },
     "backgroundColor": "#A9C3F8",
     "backgroundTextStyle": "light",

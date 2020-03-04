@@ -1,2 +1,12 @@
 <!--components/todo-input/TodoInput.wxml-->
-<text>components/todo-input/TodoInput.wxml</text>
+<view class="todo-input-wrapper">
+    <view class="add-icon">
+        <van-icon name="plus" />
+    </view>
+    <view class="input-component-wrapper">
+        <input class="input-component" placeholder-style="color:#fff;" placeholder="请输入代办事项" />
+    </view>
+    <view class="enter-icon">
+        <van-icon name="upgrade" />
+    </view>
+</view>

@@ -5,9 +5,9 @@
         <van-checkbox bind:change="onChange" value="{{ checked }}"></van-checkbox>
         </view>
         <view class="todo-body" bindtap="onClickTodoItem">
-            <view class="todo-title van-ellipsis">代办标题</view>
+            <view class="todo-title van-ellipsis" style="{{checked ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">代办标题</view>
             <view class="todo-des van-ellipsis">日期：2010-9-8</view>
         </view>
-        <view class="todo-operate" bindtap="onClickTodoItemRight"><van-icon name="star-o" /></view>
+        <view class="todo-operate"  bindtap="onClickTodoItemRight" ><van-icon color="{{checked ? '#A9C3F8' :''}}" name="star-o" /></view>
     </view>
 </view>

@@ -7,7 +7,7 @@
 .user-info{
     display: flex;
     align-items: center;
-    padding: 20rpx;
+    padding: 60rpx 20rpx 20rpx;
 }
 .user-info .user-avatar{
     font-size: 50px;

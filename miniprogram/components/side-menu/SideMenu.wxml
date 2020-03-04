@@ -14,7 +14,7 @@
     <view class="menu-list">
         <van-cell-group>
             <van-cell size="large" icon="star-o" value="2" title="重要" />
-            <van-cell size="large" icon="records" value="3" title="任务列表" border="{{ false }}" />
+            <van-cell size="large" icon="records" value="3" title="代办列表" border="{{ false }}" />
         </van-cell-group>
     </view>
 </view>

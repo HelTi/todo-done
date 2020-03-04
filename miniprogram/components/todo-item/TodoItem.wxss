@@ -28,17 +28,21 @@
     align-items: center;
     justify-content: space-between;
     padding:0 20rpx;
-    height: 122rpx;
+    height: 100rpx;
     /* border-bottom: 1px solid #dedede; */
-    margin-bottom: 1px;
+    margin-bottom: 2px;
 }
 
 .todo-body {
     width: 580rpx;
     padding-left: 20rpx;
-    font-size: 34rpx;
+    font-size: 14px;
 }
 
 .todo-body .todo-des {
-    font-size: 24rpx;
+    font-size: 12px;
+}
+
+.todo-des {
+    color: #a0a0a0;
 }
