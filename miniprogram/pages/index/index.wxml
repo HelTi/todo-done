@@ -19,7 +19,7 @@
     </view>
     <!-- todo input -->
     <view class="todo-input-wrapper fixed-bottom">
-        <todo-input></todo-input>
+        <todo-input bind:success="onAddTodoSuccess"></todo-input>
     </view>
 
     <!-- 右侧菜单 -->

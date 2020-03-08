@@ -13,6 +13,7 @@ Page({
 
     onLoad: function() {
         this.checkAuth()
+        this.queryTestDB()
     },
     checkAuth() {
         //获取用户信息
@@ -50,6 +51,11 @@ Page({
         }
     },
 
+    onAddTodoSuccess(res) {
+        console.log('res', res)
+        this.queryTestDB()
+    },
+
     onGetOpenid: function() {
         // 调用云函数
         wx.cloud.callFunction({
@@ -67,6 +73,15 @@ Page({
                 wx.navigateTo({
                     url: '../deployFunctions/deployFunctions',
                 })
+            }
+        })
+    },
+
+    queryTestDB() {
+        const db = wx.cloud.database()
+        db.collection('test').where({}).get({
+            success: (res) => {
+                console.log(res)
             }
         })
     },

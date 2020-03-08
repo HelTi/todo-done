@@ -4,7 +4,7 @@
         <van-icon name="plus" />
     </view>
     <view class="input-component-wrapper">
-        <input class="input-component" placeholder-style="color:#fff;" placeholder="请输入代办事项" />
+        <input bindinput="todoInputHandle" bindconfirm="todoInputConfirmHandle" class="input-component" value="{{todoValue}}" placeholder-style="color:#fff;" placeholder="请输入代办事项" />
     </view>
     <view class="enter-icon">
         <van-icon name="upgrade" />
