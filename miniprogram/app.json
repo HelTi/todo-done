@@ -12,10 +12,14 @@
         "pages/openapi/callback/callback",
         "pages/openapi/cloudid/cloudid",
         "pages/im/im",
-        "pages/im/room/room"
+        "pages/im/room/room",
+        "pages/important/important",
+        "pages/todo-list/todo-list",
+        "pages/todo-detail/todo-detail"
     ],
     "usingComponents": {
         "todo-list": "/components/todolist/todolist",
+        "todo-input": "/components/todo-input/TodoInput",
         "van-button": "@vant/weapp/button",
         "van-icon": "@vant/weapp/icon",
         "van-popup": "@vant/weapp/popup",
@@ -24,9 +28,9 @@
         "van-cell-group": "@vant/weapp/cell-group"
     },
     "window": {
-        "backgroundColor": "#F6F6F6",
+        "backgroundColor": "#A9C3F8",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarBackgroundColor": "#A9C3F8",
         "navigationBarTitleText": "TodoDone",
         "navigationBarTextStyle": "black"
     },

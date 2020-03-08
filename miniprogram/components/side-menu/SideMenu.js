@@ -29,6 +29,16 @@ Component({
                 this.triggerEvent('getuserinfo', null)
             }
 
+        },
+        goImportant() {
+            wx.navigateTo({
+                url: '/pages/important/important',
+            })
+        },
+        goTodoList() {
+            wx.navigateTo({
+                url: '/pages/todo-list/todo-list',
+            })
         }
     }
 })

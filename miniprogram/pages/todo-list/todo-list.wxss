@@ -1,0 +1,14 @@
+/* miniprogram/pages/important/important.wxss */
+page{
+    background: #A9C3F8;
+    padding-bottom: 120rpx;
+}
+
+.important-wrapper{
+    padding-top: 80rpx;
+}
+
+/* todo-input */
+.todo-input-wrapper{
+    padding: 20rpx;
+}

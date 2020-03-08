@@ -1,10 +1,8 @@
 {
-    "usingComponents": {
-        "side-menu": "../../components/side-menu/SideMenu"
-    },
+    "usingComponents": {},
     "backgroundColor": "#A9C3F8",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#A9C3F8",
     "navigationBarTitleText": "",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
 }

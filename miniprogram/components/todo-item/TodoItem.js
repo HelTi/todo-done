@@ -31,6 +31,9 @@ Component({
         },
         onClickTodoItem(){
             this.triggerEvent('clicktodoitem')
+            wx.navigateTo({
+                url: '/pages/todo-detail/todo-detail',
+            })
         },
         onClickTodoItemRight(){
             this.triggerEvent('clicktodoright')

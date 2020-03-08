@@ -13,8 +13,8 @@
     </view>
     <view class="menu-list">
         <van-cell-group>
-            <van-cell size="large" icon="star-o" value="2" title="重要" />
-            <van-cell size="large" icon="records" value="3" title="代办列表" border="{{ false }}" />
+            <van-cell bind:click="goImportant" size="large" icon="star-o" value="2" title="重要" />
+            <van-cell bind:click="goTodoList" size="large" icon="records" value="3" title="代办列表" border="{{ false }}" />
         </van-cell-group>
     </view>
 </view>
