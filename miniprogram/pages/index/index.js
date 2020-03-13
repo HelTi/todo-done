@@ -1,4 +1,5 @@
 //index.js
+import { formatDate} from '../../utils/utils.js'
 const app = getApp()
 
 Page({
@@ -8,7 +9,8 @@ Page({
         logged: false,
         takeSession: false,
         requestResult: '',
-        showMenuPopup: false
+        showMenuPopup: false,
+        todoList:[]
     },
 
     onLoad: function() {
@@ -82,6 +84,15 @@ Page({
         db.collection('test').where({}).get({
             success: (res) => {
                 console.log(res)
+                let data = res.data.map(item=>{
+                    return {
+                        ...item,
+                        create_date_format: formatDate(item.create_date)
+                    }
+                })
+                this.setData({
+                    todoList: data
+                })
             }
         })
     },

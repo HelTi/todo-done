@@ -1,6 +1,6 @@
 <!--components/todolist/todolist.wxml-->
 <view class="todo-lsit-wrapper">
     <view class="todo-list-content">
-        <todo-item bind:checkboxchange="checkboxChange" bind:clicktodoitem="clickTodoItemHandle" bind:clicktodoright="clickTodoItemRight" data-todo="{{item}}" wx:for="{{[1,2,3,4,5]}}" wx:key="index" />
+        <todo-item bind:checkboxchange="checkboxChange" bind:clicktodoitem="clickTodoItemHandle" bind:clicktodoright="clickTodoItemRight" todo="{{item}}" data-todo="{{item}}" wx:for="{{todoList}}" wx:key="_id" />
     </view>
 </view>

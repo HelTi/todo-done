@@ -4,9 +4,9 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        checked: {
-            type: Boolean,
-            value: false
+        todo: {
+            type: Object,
+            value: {}
         }
     },
 
@@ -14,7 +14,7 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        checked: false
     },
 
     /**

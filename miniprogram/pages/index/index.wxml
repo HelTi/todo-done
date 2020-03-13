@@ -15,7 +15,7 @@
         </view>
     </view>
     <view class="page-content">
-        <todo-list></todo-list>
+        <todo-list todo-list="{{todoList}}"></todo-list>
     </view>
     <!-- todo input -->
     <view class="todo-input-wrapper fixed-bottom">
