@@ -22,8 +22,7 @@ Component({
      */
     methods: {
         checkboxChange(event) {
-            console.log(event)
-            let checked = event.detail
+            console.log('ev',event)
         },
         clickTodoItemHandle(event){
             console.log(event)

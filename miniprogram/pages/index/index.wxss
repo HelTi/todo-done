@@ -1,13 +1,17 @@
-page{
-    background: #A9C3F8;
+page {
+    background: #a9c3f8;
+}
+
+.page {
     padding-bottom: 120rpx;
 }
-.page-top{
+
+.page-top {
     display: flex;
     justify-content: space-between;
     padding: 20rpx;
-    background: #A9C3F8;
-    color: #ffffff;
+    background: #a9c3f8;
+    color: #fff;
 }
 
 .top-left .day-text {
@@ -18,11 +22,12 @@ page{
     font-size: 14px;
 }
 
-.top-right{
+.top-right {
     font-size: 20px;
 }
 
 /* todo-input */
-.todo-input-wrapper{
+
+.todo-input-wrapper {
     padding: 20rpx;
 }

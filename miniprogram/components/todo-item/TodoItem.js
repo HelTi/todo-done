@@ -22,20 +22,48 @@ Component({
      */
     methods: {
         onChange(event) {
-            console.log(event)
-            this.triggerEvent('checkboxchange', event.detail)
+            let done = event.detail
+            let todoId = this.data.todo._id
+            const db = wx.cloud.database()
+            db.collection('test').doc(todoId).update({
+                data: {
+                    done: done,
+                    complete_date: done ? new Date() : null
+                },
+                success: function(res) {
+                    console.log(res)
+                }
+            })
             this.setData({
-                checked: event.detail
+                todo: {
+                    ...this.data.todo,
+                    done,
+                    complete_date: done ? new Date() : null
+                }
             });
-            
+            this.triggerEvent('checkboxchange', event.detail)
         },
-        onClickTodoItem(){
+        onClickTodoItem() {
             this.triggerEvent('clicktodoitem')
             wx.navigateTo({
                 url: '/pages/todo-detail/todo-detail',
             })
         },
-        onClickTodoItemRight(){
+        onClickTodoItemRight() {
+            let todoId = this.data.todo._id
+            const db = wx.cloud.database()
+            let isImportant = !this.data.todo.isImportant
+            db.collection('test').doc(todoId).update({
+                data: {
+                    isImportant
+                }
+            })
+            this.setData({
+                todo: {
+                    ...this.data.todo,
+                    isImportant
+                }
+            });
             this.triggerEvent('clicktodoright')
         }
     }
