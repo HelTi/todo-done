@@ -1,5 +1,10 @@
 //index.js
-import { formatDate} from '../../utils/utils.js'
+import {
+    formatDate
+} from '../../utils/utils.js'
+import {
+    queryTodo
+} from '../../utils/queryTodo.js'
 const app = getApp()
 
 Page({
@@ -10,7 +15,7 @@ Page({
         takeSession: false,
         requestResult: '',
         showMenuPopup: false,
-        todoList:[]
+        todoList: []
     },
 
     onLoad: function() {
@@ -80,20 +85,11 @@ Page({
     },
 
     queryTestDB() {
-        const db = wx.cloud.database()
-        db.collection('test').where({}).get({
-            success: (res) => {
-                console.log(res)
-                let data = res.data.map(item=>{
-                    return {
-                        ...item,
-                        create_date_format: formatDate(item.create_date)
-                    }
-                })
-                this.setData({
-                    todoList: data
-                })
-            }
+        queryTodo().then(res => {
+            console.log('res', res)
+            this.setData({
+                todoList: res.data
+            })
         })
     },
 
