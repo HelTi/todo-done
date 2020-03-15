@@ -5,7 +5,7 @@
         <van-checkbox bind:change="onChange" value="{{ todo.done }}"></van-checkbox>
         </view>
         <view class="todo-body" bindtap="onClickTodoItem">
-            <view class="todo-title van-ellipsis" style="{{checked ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
+            <view class="todo-title van-ellipsis" style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
             <!-- <view class="todo-des van-ellipsis">日期：{{todo.create_date_format}}</view> -->
         </view>
         <view class="todo-operate"  bindtap="onClickTodoItemRight" >

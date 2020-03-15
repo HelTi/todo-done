@@ -1,17 +1,16 @@
-
 .todo-item-content {
     background-color: #fff;
     border-radius: 15rpx;
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    padding:0 20rpx;
+    padding: 0 40rpx;
     height: 100rpx;
     /* border-bottom: 1px solid #dedede; */
     margin-bottom: 2px;
 }
 
-.todo-check{
+.todo-check {
     width: 50rpx;
 }
 
@@ -29,20 +28,24 @@
     color: #a0a0a0;
 }
 
-.todo-setting{
-    padding: 20rpx;
+.todo-setting {
+    padding: 0 40rpx 40rpx;
 }
 
-.todo-setting .setting-item{
-    border-bottom: 1px solid #dedede;
+.todo-setting .setting-item {
+    border-bottom: 1px solid #f0f0f0;
     display: flex;
     padding: 25rpx 0;
     align-items: center;
     font-size: 14px;
-    color: #797575;
+    color: #455a6499;
 }
 
-.setting-icon{
+.active-item {
+    color: #1989fa !important;
+}
+
+.setting-icon {
     width: 50rpx;
     font-size: 16px;
     height: 100%;
@@ -50,25 +53,26 @@
     align-items: center;
 }
 
-.setting-body{
+.setting-body {
     padding-left: 10rpx;
 }
+
 /* bottom */
 
-.tips-bottom-content{
+.tips-bottom-content {
     display: flex;
     font-size: 12px;
     align-items: center;
-    padding: 30rpx 20rpx;
+    padding: 30rpx 40rpx;
     color: #797575;
 }
 
-.tips-bottom-content .placeholder{
+.tips-bottom-content .placeholder {
     width: 50rpx;
 }
 
 .tips-body {
-    width: 610rpx;
+    width: 570rpx;
     display: flex;
     align-items: center;
     justify-content: center;

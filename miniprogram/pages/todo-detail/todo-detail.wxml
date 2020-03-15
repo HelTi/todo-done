@@ -1,47 +1,57 @@
 <!--miniprogram/pages/todo-detail/todo-detail.wxml-->
 <view class="page todo-detail-wrapper">
-    <view class="todo-item">
-        <view class="todo-item-wrapper">
-            <view class="todo-item-content">
-                <view class="todo-check">
-                    <van-checkbox bind:change="clickCheckBox" value="{{ checked }}"></van-checkbox>
-                </view>
-                <view class="todo-body" bindtap="onClickTodoItem">
-                    <view class="todo-title van-ellipsis">代办标题</view>
-                </view>
-                <view class="todo-operate" bindtap="onClickTodoItemRight">
-                    <van-icon color="{{checked ? '#A9C3F8' :''}}" name="star-o" />
+    <view wx:if="{{todo}}">
+        <view class="todo-item">
+            <view class="todo-item-wrapper">
+                <view class="todo-item-content">
+                    <view class="todo-check">
+                        <van-checkbox bind:change="clickCheckBox" value="{{ todo.done }}"></van-checkbox>
+                    </view>
+                    <view class="todo-body" bindtap="onClickTodoItem">
+                        <view class="todo-title van-ellipsis">{{todo.description}}</view>
+                    </view>
+                    <view class="todo-operate" bindtap="onClickTodoItemRight">
+                        <van-icon wx:if="{{!todo.isImportant}}" name="star-o" />
+                        <van-icon wx:else color="{{todo.isImportant ? '#1989fa' :''}}" name="star" />
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
-    <view class="todo-setting">
-        <view class="setting-item">
-            <view class="setting-icon">
-                <van-icon name="flag-o" />
+        <view class="todo-setting">
+            <view class="setting-item {{todo.isMyday ? 'active-item' : ''}}">
+                <view class="setting-icon">
+                    <van-icon name="flag-o" />
+                </view>
+                <view class="setting-body">
+                    <view bindtap="editTodoToMydayHandle" wx:if="{{todo.isMyday}}">已添加到“我的一天”</view>
+                    <view bindtap="editTodoToMydayHandle" wx:else>添加到“我的一天”</view>
+                </view>
             </view>
-            <view class="setting-body">添加到我的一天</view>
-        </view>
 
-        <view class="setting-item">
-            <view class="setting-icon">
-                <van-icon name="calender-o" />
+            <view class="setting-item {{todo.due_date ? 'active-item' : ''}}">
+                <view class="setting-icon">
+                    <van-icon name="calender-o" />
+                </view>
+                <view class="setting-body">
+                    <view wx:if="{{todo.due_date}}">3月20日到期 周五 到期</view>
+                    <view wx:else>添加截止日期</view>
+                </view>
             </view>
-            <view class="setting-body">3月20日到期 周五 到期</view>
-        </view>
 
-        <view class="setting-item">
-            <textarea value="{{remark}}" bindblur="remarkBlurHandle" placeholder="添加备注" />
-        </view>
-    </view>
-    <!-- 底部 -->
-    <view class="tips-bottom fixed-bottom">
-        <view class="tips-bottom-content">
-            <view class="placeholder"></view>
-            <view class="tips-body">
-                <view>完成时间 今天</view>
+            <view class="setting-item">
+                <textarea value="{{remark}}" bindblur="remarkBlurHandle" placeholder="添加备注" />
             </view>
-            <view class="placeholder">删除</view>
+        </view>
+        <!-- 底部 -->
+        <view class="tips-bottom fixed-bottom">
+            <view class="tips-bottom-content">
+                <view class="placeholder"></view>
+                <view class="tips-body">
+                    <view>完成时间 今天</view>
+                </view>
+                <view class="placeholder">删除</view>
+            </view>
         </view>
     </view>
+
 </view>
