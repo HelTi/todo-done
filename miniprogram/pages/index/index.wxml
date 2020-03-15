@@ -4,8 +4,7 @@
         <view class="top-left">
             <view class="day-text">我的一天</view>
             <view class="day-date">
-                <text>2月29日</text>
-                <text>星期六</text>
+                {{currentDate}}
             </view>
         </view>
         <view class="top-right">

@@ -9,7 +9,7 @@ const app = getApp()
 
 Page({
     data: {
-        avatarUrl: './user-unlogin.png',
+        currentDate: '',
         userInfo: null,
         logged: false,
         takeSession: false,
@@ -21,6 +21,9 @@ Page({
     onLoad: function() {
         this.checkAuth()
         this.queryTestDB()
+        this.setData({
+            currentDate: formatDate(null,true)
+        })
     },
     checkAuth() {
         //获取用户信息

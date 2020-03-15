@@ -2,13 +2,15 @@
 <view class="todo-item-wrapper">
     <view class="todo-item-content">
         <view class="todo-check">
-        <van-checkbox bind:change="onChange" value="{{ todo.done }}"></van-checkbox>
+            <van-checkbox bind:change="onChange" value="{{ todo.done }}"></van-checkbox>
         </view>
-        <view class="todo-body" bindtap="onClickTodoItem">
-            <view class="todo-title van-ellipsis" style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
+        <view class="todo-body">
+            <navigator hover-class="none" url="/pages/todo-detail/todo-detail?id={{todo._id}}">
+                <view class="todo-title van-ellipsis" style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
+            </navigator>
             <!-- <view class="todo-des van-ellipsis">日期：{{todo.create_date_format}}</view> -->
         </view>
-        <view class="todo-operate"  bindtap="onClickTodoItemRight" >
+        <view class="todo-operate" bindtap="onClickTodoItemRight">
             <van-icon wx:if="{{!todo.isImportant}}" name="star-o" />
             <van-icon wx:else color="{{todo.isImportant ? '#A9C3F8' :''}}" name="star" />
         </view>

@@ -25,7 +25,8 @@
         "van-popup": "@vant/weapp/popup",
         "van-checkbox": "@vant/weapp/checkbox",
         "van-cell": "@vant/weapp/cell",
-        "van-cell-group": "@vant/weapp/cell-group"
+        "van-cell-group": "@vant/weapp/cell-group",
+        "van-datetime-picker": "@vant/weapp/datetime-picker"
     },
     "window": {
         "backgroundColor": "#A9C3F8",
