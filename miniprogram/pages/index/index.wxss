@@ -3,7 +3,7 @@ page {
 }
 
 .page {
-    padding-bottom: 120rpx;
+    padding-bottom: 140rpx;
 }
 
 .page-top {
@@ -24,10 +24,4 @@ page {
 
 .top-right {
     font-size: 20px;
-}
-
-/* todo-input */
-
-.todo-input-wrapper {
-    padding: 20rpx;
 }

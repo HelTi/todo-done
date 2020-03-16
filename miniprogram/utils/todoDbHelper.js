@@ -1,5 +1,5 @@
 const db = wx.cloud.database()
-const dbCollection = db.collection('test')
+const dbCollection = db.collection('todos')
 
 /**
  * 通过id查询单个todo详情
@@ -18,12 +18,13 @@ export const addTodoItem = (params) => {
         // description: description, // 描述，标题
         create_date: new Date(), // 创建时间
         isMyday: false,
+        addMydayDate: null, // 添加到我的一天的时间
         due_date: null, // 结束时间
         complete_date: null, // 完成时间
         done: false, // 是否完成
         isImportant: false, // 是否重要
         remark: '', // 备注
-        type: 0, // 扩展类型 0:从我的一天 1:从重要加入 3:从代办列表加入
+        type: 0, 
         remind: false, // 是否提醒
         remind_date: null // 提醒时间
     }

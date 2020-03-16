@@ -1,18 +1,37 @@
 // miniprogram/pages/important/important.js
+import {
+    formatDate
+} from '../../utils/utils.js'
+import {
+    queryTodo
+} from '../../utils/queryTodo.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        todoList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.queryTodoList()
+    },
 
+    queryTodoList(){
+        queryTodo({
+            isImportant: true
+        }).then(res=>{
+            console.log('res',res)
+            if(res.data){
+                this.setData({
+                    todoList: res.data
+                })
+            }
+        })
     },
 
     /**

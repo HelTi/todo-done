@@ -3,7 +3,7 @@ import {
     formatDate
 } from '../../utils/utils.js'
 import {
-    queryTodo
+    queryTodo,
 } from '../../utils/queryTodo.js'
 const app = getApp()
 
@@ -23,6 +23,17 @@ Page({
         this.queryTestDB()
         this.setData({
             currentDate: formatDate(null,true)
+        })
+    },
+
+    queryTestDB() {
+        queryTodo({
+            isMyday: true
+        }).then(res => {
+            console.log('res', res)
+            this.setData({
+                todoList: res.data
+            })
         })
     },
     checkAuth() {
@@ -84,15 +95,6 @@ Page({
                     url: '../deployFunctions/deployFunctions',
                 })
             }
-        })
-    },
-
-    queryTestDB() {
-        queryTodo().then(res => {
-            console.log('res', res)
-            this.setData({
-                todoList: res.data
-            })
         })
     },
 

@@ -4,9 +4,9 @@ import {
 /**
  * 根据参数分页查询todo列表 /小程序端一次最多查20个
  */
-export const queryTodo = async(collection = "test", dbParams = {}, page = 1, pageSize = 20) => {
+export const queryTodoBypage = async(dbParams = {}, page = 1, pageSize = 20) => {
     const db = wx.cloud.database()
-    const dbCollection = db.collection(collection)
+    const dbCollection = db.collection('todos')
     const countResult = await dbCollection.count()
     // 总条数
     const count = countResult.total
@@ -26,4 +26,38 @@ export const queryTodo = async(collection = "test", dbParams = {}, page = 1, pag
             count
         })
     })
+}
+
+/**
+ * 从服务端查询
+ */
+export const queryTodo = (dbParams = {}) => {
+    console.log('ql')
+    return new Promise((resolve, reject) => {
+        wx.cloud.callFunction({
+            // 云函数名称
+            name: 'querytodolist',
+            // 传给云函数的参数
+            data: {dbParams},
+            success: function(res) {
+                let {
+                    data,
+                    count
+                } = res.result
+                // 对字段添加时间格式化字段
+                data = data.map(item => {
+                    return {
+                        ...item,
+                        due_date_format: item.due_date ? formatDate(item.due_date) : null,
+                        complete_date_format: item.complete_date ? formatDate(item.complete_date) : null
+                    }
+                })
+                resolve({
+                    data,
+                    count
+                })
+            }
+        })
+    })
+
 }

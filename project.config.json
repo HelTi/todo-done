@@ -61,6 +61,19 @@
 					"id": -1,
 					"name": "pages/todo-detail/todo-detail",
 					"pathName": "pages/todo-detail/todo-detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/important/important",
+					"pathName": "pages/important/important",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/todo-list/todo-list",
+					"pathName": "pages/todo-list/todo-list",
 					"scene": null
 				}
 			]

@@ -25,7 +25,7 @@ Component({
             let done = event.detail
             let todoId = this.data.todo._id
             const db = wx.cloud.database()
-            db.collection('test').doc(todoId).update({
+            db.collection('todos').doc(todoId).update({
                 data: {
                     done: done,
                     complete_date: done ? new Date() : null
@@ -53,7 +53,7 @@ Component({
             let todoId = this.data.todo._id
             const db = wx.cloud.database()
             let isImportant = !this.data.todo.isImportant
-            db.collection('test').doc(todoId).update({
+            db.collection('todos').doc(todoId).update({
                 data: {
                     isImportant
                 }

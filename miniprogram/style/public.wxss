@@ -49,8 +49,15 @@
 }
 
 .fixed-bottom{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+/* todo-input */
+
+.todo-input-wrapper {
+    padding: 20rpx;
+    background: #a9c3f8;
 }

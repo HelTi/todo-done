@@ -1,7 +1,7 @@
 /* miniprogram/pages/important/important.wxss */
 page{
     background: #A9C3F8;
-    padding-bottom: 120rpx;
+    padding-bottom: 140rpx;
 }
 
 .important-wrapper{

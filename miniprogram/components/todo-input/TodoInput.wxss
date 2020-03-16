@@ -6,10 +6,10 @@
     height: 90rpx;
     width: 100%;
     justify-content: space-between;
-    background-color: rgba(100, 96, 96,.2);
+    background-color: rgba(100, 96, 96,.6);
     color: #fff;
     border-radius: 10rpx;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .add-icon, .enter-icon {
