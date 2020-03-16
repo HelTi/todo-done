@@ -32,6 +32,11 @@ Page({
         })
     },
 
+    onAddTodoSuccess(res) {
+        console.log('res', res)
+        this.queryTodoList()
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

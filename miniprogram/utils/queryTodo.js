@@ -4,7 +4,7 @@ import {
 /**
  * 根据参数分页查询todo列表 /小程序端一次最多查20个
  */
-export const queryTodoBypage = async(dbParams = {}, page = 1, pageSize = 20) => {
+export const queryTodoByPage = async(dbParams = {}, page = 1, pageSize = 20) => {
     const db = wx.cloud.database()
     const dbCollection = db.collection('todos')
     const countResult = await dbCollection.count()
@@ -38,11 +38,14 @@ export const queryTodo = (dbParams = {}) => {
             // 云函数名称
             name: 'querytodolist',
             // 传给云函数的参数
-            data: {dbParams},
+            data: {
+                dbParams
+            },
             success: function(res) {
                 let {
                     data,
-                    count
+                    count,
+                    isImportantCount
                 } = res.result
                 // 对字段添加时间格式化字段
                 data = data.map(item => {
@@ -54,10 +57,30 @@ export const queryTodo = (dbParams = {}) => {
                 })
                 resolve({
                     data,
-                    count
+                    count,
+                    isImportantCount
                 })
             }
         })
     })
 
+}
+
+export const queryMenuSubscript = () => {
+    return new Promise((resolve, reject) => {
+        wx.cloud.callFunction({
+            name: 'querymenusubscript',
+            success: function(res) {
+                let {
+                    count,
+                    isImportantCount
+                } = res.result
+
+                resolve({
+                    count,
+                    isImportantCount
+                })
+            }
+        })
+    })
 }

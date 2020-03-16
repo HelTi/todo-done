@@ -7,6 +7,10 @@ Component({
         userInfo: {
             type: Object,
             value: null
+        },
+        subscript: { // 角标
+            type: Object,
+            value: null
         }
     },
 
@@ -34,11 +38,13 @@ Component({
             wx.navigateTo({
                 url: '/pages/important/important',
             })
+            this.triggerEvent('click-menu-list-item', {})
         },
         goTodoList() {
             wx.navigateTo({
                 url: '/pages/todo-list/todo-list',
             })
+            this.triggerEvent('click-menu-list-item', {})
         }
     }
 })

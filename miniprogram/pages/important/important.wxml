@@ -5,6 +5,6 @@
     </view>
      <!-- todo input -->
     <view class="todo-input-wrapper fixed-bottom">
-        <todo-input page-type="{{1}}"></todo-input>
+        <todo-input bind:success="onAddTodoSuccess" page-type="{{1}}"></todo-input>
     </view>
 </view>
