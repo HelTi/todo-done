@@ -49,7 +49,7 @@
                 <view class="tips-body">
                     <view>完成时间 今天</view>
                 </view>
-                <view class="placeholder">删除</view>
+                <view bindtap="removeTodoItemHandle" class="placeholder">删除</view>
             </view>
         </view>
     </view>

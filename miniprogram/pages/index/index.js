@@ -18,7 +18,7 @@ Page({
         showMenuPopup: false,
         todoList: [],
         menuSubscript: {
-            isImportantCount: 2,
+            isImportantCount: '',
             count: ''
         },
     },

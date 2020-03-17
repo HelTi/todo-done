@@ -1,7 +1,8 @@
 // miniprogram/pages/todo-detail/todo-detail.js
 import {
     queryTodoDetailById,
-    updateTodoItem
+    updateTodoItem,
+    removeTodoItem
 } from '../../utils/todoDbHelper.js'
 
 import {
@@ -79,6 +80,25 @@ Page({
         }).then(res => {
             this.queryItemDetail(todoId)
         })
+    },
+    removeTodoItemHandle() {
+        let that = this
+        wx.showModal({
+            title: '提示',
+            content: '确定要删除此条任务吗？',
+            success(res) {
+                if (res.confirm) {
+                    removeTodoItem(that.data.todo._id).then(res => {
+                        wx.navigateBack({
+
+                        })
+                    })
+                } else if (res.cancel) {
+
+                }
+            }
+        })
+
     },
     openDatePickPopup() {
         this.setData({

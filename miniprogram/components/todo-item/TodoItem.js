@@ -46,7 +46,7 @@ Component({
         onClickTodoItem() {
             this.triggerEvent('clicktodoitem')
             wx.navigateTo({
-                url: '/pages/todo-detail/todo-detail',
+                url: '/pages/todo-detail/todo-detail?'+this.data.todo._id,
             })
         },
         onClickTodoItemRight() {
@@ -65,6 +65,11 @@ Component({
                 }
             });
             this.triggerEvent('clicktodoright')
+        },
+        remove(){
+            wx.showToast({
+                title: 'hi',
+            })
         }
     }
 })

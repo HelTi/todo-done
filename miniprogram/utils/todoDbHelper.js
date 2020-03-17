@@ -24,7 +24,7 @@ export const addTodoItem = (params) => {
         done: false, // 是否完成
         isImportant: false, // 是否重要
         remark: '', // 备注
-        type: 0, 
+        type: 0,
         remind: false, // 是否提醒
         remind_date: null // 提醒时间
     }
@@ -45,4 +45,12 @@ export const updateTodoItem = (id, params) => {
             ...params
         }
     })
+}
+
+/**
+ * 删除todoItem
+ */
+
+export const removeTodoItem = (id) => {
+    return dbCollection.doc(id).remove()
 }
