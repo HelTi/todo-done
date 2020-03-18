@@ -18,28 +18,31 @@
             </view>
         </view>
         <view class="todo-setting">
-            <view class="setting-item {{todo.isMyday ? 'active-item' : ''}}">
+            <view class="setting-item {{todo.isShowMyday ? 'active-item' : ''}}">
                 <view class="setting-icon">
                     <van-icon name="flag-o" />
                 </view>
                 <view class="setting-body">
-                    <view data-type="{{false}}" bindtap="editTodoToMydayHandle" wx:if="{{todo.isMyday}}">已添加到“我的一天”</view>
+                    <view data-type="{{false}}" bindtap="editTodoToMydayHandle" wx:if="{{todo.isShowMyday}}">已添加到“我的一天”</view>
                     <view data-type="{{true}}" bindtap="editTodoToMydayHandle" wx:else>添加到“我的一天”</view>
                 </view>
             </view>
 
-            <view class="setting-item {{todo.due_date ? 'active-item' : ''}}">
+            <view class="setting-item {{todo.due_date ? 'active-item' : ''}}" style="{{todo.isShowDueDate ? 'color:red !important;' : ''}}">
                 <view class="setting-icon">
                     <van-icon name="calender-o" />
                 </view>
                 <view class="setting-body" bindtap="openDatePickPopup">
                     <view wx:if="{{todo.due_date}}">{{todo.due_date_format}} 到期</view>
-                    <view  wx:else>添加截止日期</view>
+                    <view wx:else>添加截止日期</view>
                 </view>
             </view>
 
             <view class="setting-item">
                 <textarea value="{{remark}}" bindblur="remarkBlurHandle" placeholder="添加备注" />
+            </view>
+            <view class="setting-item">
+                创建时间：{{todo.create_date_format}}
             </view>
         </view>
         <!-- 底部 -->
@@ -47,7 +50,10 @@
             <view class="tips-bottom-content">
                 <view class="placeholder"></view>
                 <view class="tips-body">
-                    <view>完成时间 今天</view>
+                    <view wx:if="{{todo.done}}">完成时间 {{todo.complete_date_format}}</view>
+                    <view wx:else>
+                        {{todo.isShowDueDate ? '已于'+todo.due_date_relative+'到期' : '未完成'}}
+                    </view>
                 </view>
                 <view bindtap="removeTodoItemHandle" class="placeholder">删除</view>
             </view>

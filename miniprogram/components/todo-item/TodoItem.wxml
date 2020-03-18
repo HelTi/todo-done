@@ -9,6 +9,14 @@
                 <view class="todo-title van-ellipsis" style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
             </navigator>
             <!-- <view class="todo-des van-ellipsis">日期：{{todo.create_date_format}}</view> -->
+            <view class="todo-des van-ellipsis">
+                <view wx:if="{{todo.isShowMyday && !todo.fromIndex}}" style="display:flex;aligin-item:center; margin-right:10px;">
+                    <view>我的一天</view>
+                </view>
+                <view wx:if="{{todo.isShowDueDate}}" style="color:red; display:flex;aligin-item:center;">
+                    <view>{{todo.due_date_format}}</view>
+                </view>
+            </view>
         </view>
         <view class="todo-operate" bindtap="onClickTodoItemRight">
             <van-icon wx:if="{{!todo.isImportant}}" name="star-o" />

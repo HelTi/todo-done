@@ -1,6 +1,8 @@
 import {
     formatDate
 } from './utils.js'
+
+import { markTodoItem } from './markTodoItem.js'
 /**
  * 根据参数分页查询todo列表 /小程序端一次最多查20个
  */
@@ -32,7 +34,6 @@ export const queryTodoByPage = async(dbParams = {}, page = 1, pageSize = 20) => 
  * 从服务端查询
  */
 export const queryTodo = (dbParams = {}) => {
-    console.log('ql')
     return new Promise((resolve, reject) => {
         wx.cloud.callFunction({
             // 云函数名称
@@ -49,8 +50,10 @@ export const queryTodo = (dbParams = {}) => {
                 } = res.result
                 // 对字段添加时间格式化字段
                 data = data.map(item => {
+                    let markResult = markTodoItem(item)
                     return {
                         ...item,
+                        ...markResult,
                         due_date_format: item.due_date ? formatDate(item.due_date) : null,
                         complete_date_format: item.complete_date ? formatDate(item.complete_date) : null
                     }
@@ -65,6 +68,7 @@ export const queryTodo = (dbParams = {}) => {
     })
 
 }
+
 
 export const queryMenuSubscript = () => {
     return new Promise((resolve, reject) => {

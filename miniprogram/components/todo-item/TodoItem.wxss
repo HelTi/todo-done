@@ -41,6 +41,7 @@
 
 .todo-body .todo-des {
     font-size: 12px;
+    display: flex;
 }
 
 .todo-des {

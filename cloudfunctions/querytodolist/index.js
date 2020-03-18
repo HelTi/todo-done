@@ -12,7 +12,8 @@ const _ = db.command
 const MAX_LIMIT = 100
 
 // 云函数入口函数
-exports.main = async (event, context) => {
+exports.main = async(event, context) => {
+    const wxContext = cloud.getWXContext()
     // 先取出集合记录总数
     const countResult = await db.collection('todos').count()
     const isImportantResult = await db.collection('todos').where({
@@ -22,9 +23,11 @@ exports.main = async (event, context) => {
     const count = countResult.total
     const queryCount = event.count ? event.count : 10
     // 查询参数
-    const dbParams = event.dbParams ? event.dbParams :{}
+    const dbParams = event.dbParams ? event.dbParams : {}
+    // openid
+    dbParams._openid = wxContext.OPENID
     // 我的一天条件/当天 
-    if(dbParams.isMyday){
+    if (dbParams.isMyday) {
         let curDate = moment().format('YYYY-MM-DD');
         let nextDate = moment().add(1, 'days').format('YYYY-MM-DD')
         dbParams.addMydayDate = _.gte(new Date(curDate)).and(_.lte(new Date(nextDate)))

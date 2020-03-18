@@ -44,7 +44,12 @@ Page({
                 isImportantCount
             } = res
             this.setData({
-                todoList: res.data,
+                todoList: data.map(item => {
+                    return {
+                        ...item,
+                        fromIndex: true
+                    }
+                }),
                 menuSubscript: {
                     count,
                     isImportantCount
@@ -52,11 +57,11 @@ Page({
             })
         })
     },
-    queryMenuSubscript(){
-        queryMenuSubscript().then(res=>{
-            console.log('res',res)
+    queryMenuSubscript() {
+        queryMenuSubscript().then(res => {
+            console.log('res', res)
             this.setData({
-                menuSubscript:{
+                menuSubscript: {
                     ...res
                 }
             })
@@ -107,6 +112,12 @@ Page({
     onAddTodoSuccess(res) {
         console.log('res', res)
         this.queryTodoList()
+    },
+    onShareAppMessage(res) {
+        return {
+            title: '记我清单，你效率助手',
+            path: '/pages/index/index'
+        }
     },
 
 })

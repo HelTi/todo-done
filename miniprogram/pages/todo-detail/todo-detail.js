@@ -1,4 +1,5 @@
 // miniprogram/pages/todo-detail/todo-detail.js
+const moment = require('moment')
 import {
     queryTodoDetailById,
     updateTodoItem,
@@ -8,6 +9,28 @@ import {
 import {
     formatDate
 } from '../../utils/utils.js'
+
+import {
+    markTodoItem
+} from '../../utils/markTodoItem.js'
+moment.locale('zh-cn', {
+    relativeTime: {
+        future: '%s内',
+        past: '%s前',
+        s: '几秒',
+        m: '1 分钟',
+        mm: '%d 分钟',
+        h: '1 小时',
+        hh: '%d 小时',
+        d: '1 天',
+        dd: '%d 天',
+        M: '1 个月',
+        MM: '%d 个月',
+        y: '1 年',
+        yy: '%d 年'
+    },
+
+})
 Page({
 
     /**
@@ -17,9 +40,8 @@ Page({
         checked: false,
         remark: '', //备注,
         todo: null,
-        id: '1584110300209_0.0007184980774419536_33557273',
+        id: null,
         datePickVisible: false, // 时间选择
-
         currentDate: new Date().getTime(),
         minDate: new Date().getTime(),
         formatter(type, value) {
@@ -38,7 +60,7 @@ Page({
      */
     onLoad: function(options) {
         this.data.id = options.id
-        this.queryItemDetail(this.data.id)
+        this.queryItemDetail()
     },
     clickCheckBox(event) {
         let done = event.detail
@@ -48,14 +70,9 @@ Page({
             complete_date: done ? new Date() : null
         }).then(res => {
             console.log('更新成功！', res)
+            this.queryItemDetail()
         })
-        this.setData({
-            todo: {
-                ...this.data.todo,
-                done,
-                complete_date: done ? new Date() : null
-            }
-        });
+
     },
     onClickTodoItemRight() {
         let todoId = this.data.todo._id
@@ -64,21 +81,19 @@ Page({
             isImportant
         }).then(res => {
             console.log('更新成功！', res)
+            this.queryItemDetail()
         })
-        this.setData({
-            todo: {
-                ...this.data.todo,
-                isImportant
-            }
-        });
+
     },
     editTodoToMydayHandle(e) {
+        // 添加到我的一天/ 取消我的一天
         const isMyday = e.target.dataset.type
         let todoId = this.data.todo._id
         updateTodoItem(todoId, {
-            isMyday
+            isMyday,
+            addMydayDate: isMyday ? new Date() : null
         }).then(res => {
-            this.queryItemDetail(todoId)
+            this.queryItemDetail()
         })
     },
     removeTodoItemHandle() {
@@ -116,7 +131,7 @@ Page({
         updateTodoItem(todoId, {
             due_date
         }).then(res => {
-            this.queryItemDetail(todoId)
+            this.queryItemDetail()
             this.setData({
                 datePickVisible: false
             })
@@ -136,17 +151,21 @@ Page({
         updateTodoItem(todoId, {
             remark: e.detail.value
         }).then(res => {
-            this.queryItemDetail(todoId)
+            this.queryItemDetail()
         })
     },
-    queryItemDetail(id) {
-        queryTodoDetailById(id).then(res => {
+    queryItemDetail() {
+        queryTodoDetailById(this.data.id).then(res => {
             if (res.data) {
                 const data = res.data.map(item => {
+                    let markResult = markTodoItem(item)
                     return {
                         ...item,
+                        ...markResult,
                         due_date_format: item.due_date ? formatDate(item.due_date) : null,
-                        complete_date_format: item.complete_date ? formatDate(item.complete_date) : null
+                        due_date_relative: item.due_date ? moment(item.due_date).startOf('minute').fromNow() : null,
+                        complete_date_format: item.complete_date ? moment(item.complete_date).startOf('minute').fromNow() : null,
+                        create_date_format: moment(item.create_date).startOf('minute').fromNow()
                     }
                 })
 
@@ -154,7 +173,7 @@ Page({
                     currentDate: new Date(data[0].due_date).getTime(),
                     remark: data[0].remark
                 })
-
+                console.log(data[0])
 
                 this.setData({
                     todo: data[0]
