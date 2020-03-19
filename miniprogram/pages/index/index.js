@@ -35,9 +35,6 @@ Page({
         queryTodo({
             isMyday: true
         }).then(res => {
-            this.setData({
-                loading: false
-            })
             let {
                 data,
                 count,
@@ -53,7 +50,8 @@ Page({
                 menuSubscript: {
                     count,
                     isImportantCount
-                }
+                },
+                loading: false
             })
         }).catch(err=>{
             console.log(err)
