@@ -115,8 +115,9 @@ Page({
     },
     onShareAppMessage(res) {
         return {
-            title: '记我清单，你效率助手',
-            path: '/pages/index/index'
+            title: '记我清单，你的效率助手',
+            path: '/pages/index/index',
+            imageUrl: '../../images/share.jpeg'
         }
     },
 
