@@ -7,7 +7,15 @@ Component({
         todoList: {
             type: Array,
             value: []
-        } 
+        },
+        loading: {
+            type: Boolean,
+            value: true
+        },
+        emptyText: {
+            type: String,
+            value: '数据是空的～'
+        }
     },
 
     /**
@@ -22,12 +30,12 @@ Component({
      */
     methods: {
         checkboxChange(event) {
-            console.log('ev',event)
+            console.log('ev', event)
         },
-        clickTodoItemHandle(event){
+        clickTodoItemHandle(event) {
             console.log(event)
         },
-        clickTodoItemRight(event){
+        clickTodoItemRight(event) {
             console.log(event)
         }
     }

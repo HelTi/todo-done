@@ -3,3 +3,9 @@
     padding:0 20rpx;
     margin-top: 20rpx;
 }
+
+.no-data{
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+}

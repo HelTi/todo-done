@@ -11,7 +11,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        todoList: []
+        todoList: [],
+        loading: true
     },
 
     /**
@@ -28,7 +29,8 @@ Page({
             console.log('res', res)
             if (res.data) {
                 this.setData({
-                    todoList: res.data
+                    todoList: res.data,
+                    loading: false
                 })
             }
         })

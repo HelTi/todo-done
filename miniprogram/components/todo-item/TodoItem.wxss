@@ -30,7 +30,7 @@
     padding:0 20rpx;
     height: 100rpx;
     /* border-bottom: 1px solid #dedede; */
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 
 .todo-body {

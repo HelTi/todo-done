@@ -12,11 +12,9 @@ Page({
     data: {
         currentDate: '',
         userInfo: null,
-        logged: false,
-        takeSession: false,
-        requestResult: '',
         showMenuPopup: false,
         todoList: [],
+        loading: true, // 第一次加载
         menuSubscript: {
             isImportantCount: '',
             count: ''
@@ -37,7 +35,9 @@ Page({
         queryTodo({
             isMyday: true
         }).then(res => {
-            console.log('res', res)
+            this.setData({
+                loading: false
+            })
             let {
                 data,
                 count,
@@ -55,6 +55,8 @@ Page({
                     isImportantCount
                 }
             })
+        }).catch(err=>{
+            console.log(err)
         })
     },
     queryMenuSubscript() {

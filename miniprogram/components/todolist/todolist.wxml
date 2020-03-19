@@ -1,6 +1,18 @@
 <!--components/todolist/todolist.wxml-->
 <view class="todo-lsit-wrapper">
-    <view class="todo-list-content">
-        <todo-item bind:checkboxchange="checkboxChange" bind:clicktodoitem="clickTodoItemHandle" bind:clicktodoright="clickTodoItemRight" todo="{{item}}" data-todo="{{item}}" wx:for="{{todoList}}" wx:key="_id" />
+    <view wx:if="{{loading}}">
+        <van-skeleton row="6" />
     </view>
+    <view wx:else>
+        <view wx:if="{{todoList.length > 0}}" class="todo-list-content">
+            <todo-item bind:checkboxchange="checkboxChange" bind:clicktodoitem="clickTodoItemHandle" bind:clicktodoright="clickTodoItemRight" todo="{{item}}" data-todo="{{item}}" wx:for="{{todoList}}" wx:key="_id" />
+        </view>
+        <view wx:else class="no-data">
+            <image src="../../images/no-data.png"></image>
+            <view style="margin-top:20rpx;">
+                {{emptyText}}
+            </view>
+        </view>
+    </view>
+
 </view>
