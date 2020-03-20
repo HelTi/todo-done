@@ -14,6 +14,7 @@
 首页展示是我的一天的清单，你可以在我的一天中添加代办事项，也可以从重要清单和代办列表里选择清单添加到我的一天
 
 <img style="width:40%;" src="img/day.jpeg" align=center />
+<img style="width:40%;" src="img/menu.jpeg" align=center />
 
 ### 重要
 重要页面展示的是重要的代办清单包含着我的一天
