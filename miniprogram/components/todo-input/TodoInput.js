@@ -2,6 +2,7 @@
 import {
     addTodoItem
 } from '../../utils/todoDbHelper.js'
+import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
 
 Component({
     /**
@@ -32,15 +33,22 @@ Component({
             let that = this
             let todoValue = this.data.todoValue
             let pageType = this.data.pageType
-            console.log('pageType',pageType)
+            console.log('pageType', pageType)
+            if (!todoValue) {
+                Notify({
+                    type: 'warning',
+                    message: '请输入代办事项！'
+                })
+                return
+            }
             let addParams = {
                 description: todoValue,
             }
-            if(pageType === 0){
+            if (pageType === 0) {
                 addParams.isMyday = true
                 addParams.addMydayDate = new Date()
             }
-            if(pageType === 1){
+            if (pageType === 1) {
                 addParams.isImportant = true
             }
             console.log('addParams', addParams)

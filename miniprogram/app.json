@@ -15,7 +15,8 @@
         "van-cell": "@vant/weapp/cell",
         "van-cell-group": "@vant/weapp/cell-group",
         "van-datetime-picker": "@vant/weapp/datetime-picker",
-        "van-skeleton": "@vant/weapp/skeleton"
+        "van-skeleton": "@vant/weapp/skeleton",
+        "van-notify": "@vant/weapp/notify/index"
     },
     "window": {
         "backgroundColor": "#A9C3F8",

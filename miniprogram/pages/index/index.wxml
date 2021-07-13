@@ -25,4 +25,6 @@
     <van-popup show="{{ showMenuPopup }}" position="right" custom-style="height: 100%;" bind:close="closeMenuPopup">
         <side-menu bind:getuserinfo="onGetUserInfo" bind:click-menu-list-item="clickMenuItem" user-info="{{userInfo}}" subscript="{{menuSubscript}}" />
     </van-popup>
+        <!-- 在页面内添加对应的节点 -->
+        <van-notify id="van-notify" />
 </view>
