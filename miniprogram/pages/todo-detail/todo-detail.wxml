@@ -55,7 +55,7 @@
                         {{todo.isShowDueDate ? '已于'+todo.due_date_relative+'到期' : '未完成'}}
                     </view>
                 </view>
-                <view bindtap="removeTodoItemHandle" class="placeholder">删除</view>
+                <view bindtap="removeTodoItemHandle" class="placeholder delete-btn">删除</view>
             </view>
         </view>
     </view>

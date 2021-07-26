@@ -2,19 +2,16 @@
 <view class="side-menu-wrapper">
     <view class="user-info">
         <view class="user-avatar">
-
-            <image wx:if="{{userInfo}}" style="width: 50px; height: 50px;border-radius:50%;" mode="cover" src="{{userInfo.avatarUrl}}" />
-            <van-icon wx:else name="user-circle-o" />
+            <open-data style="width:160rpx;borer-radius:50%;" type="userAvatarUrl"></open-data>
         </view>
-        <view wx:if="{{userInfo}}" class="user-name">{{userInfo.nickName}}</view>
-        <button wx:else class='auth-btn' lang="zh_CN" bindgetuserinfo='getUserInfo' open-type='getUserInfo'>点击登录</button>
-
-
+        <open-data type="userNickName"></open-data>
     </view>
     <view class="menu-list">
         <van-cell-group>
-            <van-cell bind:click="goImportant" size="large" icon="star-o" value="{{subscript.isImportantCount}}" title="重要" />
-            <van-cell bind:click="goTodoList" size="large" icon="records" value="{{subscript.count}}" title="代办列表" border="{{ false }}" />
+            <van-cell bind:click="goImportant" size="large" icon="star-o" value="{{subscript.isImportantCount}}"
+                title="重要" />
+            <van-cell bind:click="goTodoList" size="large" icon="records" value="{{subscript.count}}" title="代办列表"
+                border="{{ false }}" />
         </van-cell-group>
     </view>
 </view>

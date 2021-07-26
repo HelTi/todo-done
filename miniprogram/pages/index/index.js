@@ -21,7 +21,7 @@ Page({
         },
     },
 
-    onLoad: function() {
+    onLoad: function () {
         this.checkAuth()
         this.setData({
             currentDate: formatDate(null, true)
@@ -53,7 +53,7 @@ Page({
                 },
                 loading: false
             })
-        }).catch(err=>{
+        }).catch(err => {
             console.log(err)
         })
     },
@@ -74,18 +74,20 @@ Page({
     },
     checkAuth() {
         //获取用户信息
-        wx.getSetting({
-            success: res => {
-                if (res.authSetting['scope.userInfo']) {
-                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-                    wx.getUserInfo({
-                        success: res => {
-                            this.setData({
-                                userInfo: res.userInfo
-                            })
-                        }
-                    })
-                }
+        // wx.getUserInfo({
+        //     success: res => {
+        //         console.log('getUserInfo', res)
+        //         this.setData({
+        //             userInfo: res.userInfo
+        //         })
+        //     }
+        // })
+        wx.getUserProfile({
+            desc: '获取头像和昵称', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+            success: (res) => {
+                this.setData({
+                    userInfo: res.userInfo,
+                })
             }
         })
     },
@@ -100,7 +102,7 @@ Page({
             showMenuPopup: false
         })
     },
-    onGetUserInfo: function(e) {
+    onGetUserInfo: function (e) {
         console.log(e)
         if (e.detail.userInfo) {
             this.setData({

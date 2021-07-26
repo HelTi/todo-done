@@ -61,14 +61,18 @@
 
 .tips-bottom-content {
     display: flex;
-    font-size: 12px;
+    font-size: 14px;
     align-items: center;
     padding: 30rpx 40rpx;
     color: #797575;
 }
 
 .tips-bottom-content .placeholder {
-    width: 50rpx;
+    width: 90rpx;
+}
+
+.delete-btn{
+    color: #ffc107;
 }
 
 .tips-body {

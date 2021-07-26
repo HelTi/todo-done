@@ -1,23 +1,27 @@
 /* components/side-menu/SideMenu.wxss */
-.side-menu-wrapper{
+.side-menu-wrapper {
     width: 450rpx;
     height: 100%;
 }
 
-.user-info{
+.user-info {
     display: flex;
     align-items: center;
     padding: 60rpx 20rpx 20rpx;
 }
-.user-info .user-avatar{
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    color: #A9C3F8;
+
+.user-info .user-avatar {
+    border-radius: 50%;
+    width: 120rpx;
+    height: 120rpx;
+    overflow: hidden;
+    margin-right: 20rpx;
 }
-.user-name{
+
+.user-name {
     margin-left: 10px;
 }
+
 /* 登录按钮 */
 
 .auth-btn {
@@ -29,15 +33,13 @@
     font-size: 14px;
     margin-left: 10px;
 }
-.auth-btn::after{
+
+.auth-btn::after {
     border: none !important;
 }
 
-.user-info .user-name{
+.user-info .user-name {
     padding-left: 10rpx;
 }
 
-.menu-list{
-    
-}
-
+.menu-list {}
