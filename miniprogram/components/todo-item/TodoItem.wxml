@@ -5,13 +5,16 @@
             <van-checkbox bind:change="onChange" value="{{ todo.done }}"></van-checkbox>
         </view>
         <navigator hover-class="none" url="/pages/todo-detail/todo-detail?id={{todo._id}}">
-            <view class="todo-body">
+            <view class="todo-body" bindlongpress="onPress" data-todoid="{{todo._id}}">
 
-                <view class="todo-title van-ellipsis" style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}</view>
+                <view class="todo-title van-ellipsis"
+                    style="{{todo.done ? 'color:#a0a0a0;text-decoration:line-through;' :''}}">{{todo.description}}
+                </view>
 
                 <!-- <view class="todo-des van-ellipsis">日期：{{todo.create_date_format}}</view> -->
-                <view class="todo-des van-ellipsis">
-                    <view wx:if="{{todo.isShowMyday && !todo.fromIndex}}" style="display:flex;aligin-item:center; margin-right:10px;">
+                <view class="todo-des van-ellipsis" >
+                    <view wx:if="{{todo.isShowMyday && !todo.fromIndex}}"
+                        style="display:flex;aligin-item:center; margin-right:10px;">
                         <view>我的一天</view>
                     </view>
                     <view wx:if="{{todo.isShowDueDate}}" style="color:red; display:flex;aligin-item:center;">

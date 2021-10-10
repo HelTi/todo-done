@@ -1,4 +1,5 @@
 //app.js
+import('./utils/tools')
 App({
   onLaunch: function () {
     

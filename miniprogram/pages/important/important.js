@@ -43,6 +43,11 @@ Page({
         this.queryTodoList()
     },
 
+    removesuccessHandle(e){
+        console.log('todoId',e)
+        this.queryTodoList()
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

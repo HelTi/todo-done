@@ -19,22 +19,37 @@ Page({
             isImportantCount: '',
             count: ''
         },
+        hasLoadOnce: false // 是否onload一次
     },
 
     onLoad: function () {
-        this.checkAuth()
         this.setData({
             currentDate: formatDate(null, true)
         })
+        if (!this.data.hasLoadOnce) {
+            this.queryTodoList(() => {
+                this.data.hasLoadOnce = true
+            })
+        }
     },
     onShow() {
+        if (this.data.hasLoadOnce) {
+            this.queryTodoList()
+        }
+
+    },
+
+    removesuccessHandle(e) {
+        console.log('todoId', e)
         this.queryTodoList()
     },
 
-    queryTodoList() {
+    queryTodoList(cb) {
         queryTodo({
             isMyday: true
         }).then(res => {
+            //出发回调
+            cb && cb()
             let {
                 data,
                 count,
@@ -70,25 +85,6 @@ Page({
     clickMenuItem() {
         this.setData({
             showMenuPopup: false
-        })
-    },
-    checkAuth() {
-        //获取用户信息
-        // wx.getUserInfo({
-        //     success: res => {
-        //         console.log('getUserInfo', res)
-        //         this.setData({
-        //             userInfo: res.userInfo
-        //         })
-        //     }
-        // })
-        wx.getUserProfile({
-            desc: '获取头像和昵称', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-            success: (res) => {
-                this.setData({
-                    userInfo: res.userInfo,
-                })
-            }
         })
     },
     openMenuPopup() {

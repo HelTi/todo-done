@@ -37,6 +37,9 @@ Component({
         },
         clickTodoItemRight(event) {
             console.log(event)
+        },
+        removesuccessHandle(e){
+            this.triggerEvent('removesuccess',e)
         }
     }
 })

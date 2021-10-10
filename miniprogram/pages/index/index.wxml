@@ -14,7 +14,8 @@
         </view>
     </view>
     <view class="page-content">
-        <todo-list loading="{{loading}}" empty-text="您今天还没有任务～" todo-list="{{todoList}}"></todo-list>
+        <todo-list loading="{{loading}}" empty-text="您今天还没有任务～"
+        bind:removesuccess="removesuccessHandle"  todo-list="{{todoList}}"></todo-list>
     </view>
     <!-- todo input -->
     <view class="todo-input-wrapper fixed-bottom">

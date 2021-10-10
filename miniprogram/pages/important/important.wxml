@@ -1,7 +1,7 @@
 <!--miniprogram/pages/important/important.wxml-->
 <view class="page important-wrapper">
      <view class="page-content">
-        <todo-list loading="{{loading}}" todo-list="{{todoList}}"></todo-list>
+        <todo-list bind:removesuccess="removesuccessHandle"  loading="{{loading}}" todo-list="{{todoList}}"></todo-list>
     </view>
      <!-- todo input -->
     <view class="todo-input-wrapper fixed-bottom">

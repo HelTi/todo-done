@@ -104,12 +104,13 @@ Page({
             success(res) {
                 if (res.confirm) {
                     removeTodoItem(that.data.todo._id).then(res => {
+                        wx.showToast({
+                            title: '删除成功！',
+                        })
                         wx.navigateBack({
 
                         })
                     })
-                } else if (res.cancel) {
-
                 }
             }
         })

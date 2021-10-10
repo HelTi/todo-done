@@ -35,7 +35,10 @@ Page({
             }
         })
     },
-
+    removesuccessHandle(e){
+        console.log('todoId',e)
+        this.queryTodoList()
+    },
     onAddTodoSuccess(res) {
         console.log('res', res)
         this.queryTodoList()
